@@ -1,0 +1,23 @@
+option go_package = "./proto";
+
+service PersonaData {
+  rpc GetAllPersonas(GetAllPersonasInput) returns (AllPersonas) {}
+}
+
+message GetAllPersonasInput {}
+
+message Persona {
+  required int32 id = 1;
+  required string name = 2;
+  required Arcana arcana = 3;
+  required int32 level = 4;
+}
+
+message AllPersonas {
+  repeated Persona personas = 1;
+}
+
+message Arcana {
+  required int32 id = 1;
+  required string name = 2;
+}
